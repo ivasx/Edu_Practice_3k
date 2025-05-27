@@ -3,28 +3,38 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        taskOne();
-        taskTwo();
-        taskThree();
+        TaskTwo taskTwo = new TaskTwo();
+        taskTwo.taskTwo();
     }
 
     static void taskOne() {
         /*
-         Скласти програму, яка б повідомляла, що Джон народився у 1940 р.,
-         запитувала, який тепер рік, і видавала вік Джона.
+         Ввести 3 числа, вибрати й надрукувати найменше з них.
         */
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Завдання 1: \n");
+        int[] nums = new int[3];
 
-        int johnBirth = 1940;
-        System.out.println("Джон народився у " + johnBirth + " р.");
+        System.out.print("Введіть перше число: ");
+        nums[0] = scan.nextInt();
 
-        System.out.print("Введіть який зараз рік: ");
-        int currentYear = scan.nextInt();
-        int johnAge = currentYear - johnBirth;
+        System.out.print("Введіть друге число: ");
+        nums[1] = scan.nextInt();
 
-        System.out.println("Вік Джона: " + johnAge);
+        System.out.print("Введіть третє число: ");
+        nums[2] = scan.nextInt();
+
+        int min = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+        }
+
+        System.out.println("Найменше число: " + min);
+
     }
     static  void taskTwo() {
         /*
