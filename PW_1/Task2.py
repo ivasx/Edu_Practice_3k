@@ -9,3 +9,4 @@ while True:
 
 print(f'Сума: {num1 + num2:.2f}')
 print(f'Добуток: {num1 * num2:.2f}')
+
