@@ -1,17 +1,19 @@
-workers = [
-    ['Прізвище', 'Ім\'я', 'Відділ', 'Зарплата'],
-    ['Гаврилюк', 'Катерина', 'Юридичний', 14200],
-    ['Мельник', 'Василь', 'ІТ-відділ', 18900],
-    ['Бондар', 'Олена', 'Продажі', 9900],
-    ['Захаренко', 'Артем', 'Маркетинг', 11200],
-    ['Коваль', 'Наталія', 'Склад', 8600]
+machinegram = [
+    ('№ п/п', 'Табельний', 'Нараховано', 'Заборгованiсть', 'До видачi'),
+    (1, 10001, 14200, 1200, 13000),
+    (2, 10002, 18900, 2500, 16400),
+    (3, 10003, 9900, 0, 9900),
+    (4, 10004, 11200, 600, 10600),
+    (5, 10005, 8600, 860, 7740)
 ]
 
-def show_machinegram(info_list, num_lines = 1):
+def show_machinegram(info_list, num_lines=1):
+    if num_lines > len(info_list):
+        num_lines = len(info_list) - 1
+
     for i in range(num_lines + 1):
         info = info_list[i]
-        print(f"{info[0]:<15}{info[1]:<15}{info[2]:<15}{info[3]:>10}")
+        print(f"{info[0]:<15}{info[1]:<15}{info[2]:<15}{info[3]:<20}{info[4]:<10}")
 
 if __name__ == '__main__':
-    show_machinegram(workers)
-
+    show_machinegram(machinegram)
