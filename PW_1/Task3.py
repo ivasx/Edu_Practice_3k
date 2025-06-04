@@ -13,7 +13,7 @@ def show_machinegram(info_list, num_lines=1):
 
     for i in range(num_lines + 1):
         info = info_list[i]
-        print(f"{info[0]:<15}{info[1]:<15}{info[2]:<15}{info[3]:<20}{info[4]:<10}")
+        print(f'{info[0]:<15}{info[1]:<15}{info[2]:<15}{info[3]:<20}{info[4]:<10}')
 
 if __name__ == '__main__':
     show_machinegram(machinegram)
