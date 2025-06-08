@@ -42,7 +42,7 @@ class Book:
             print(f'Книгу за таким автором не знайдено. Помилка: {error}')
             return []
     @staticmethod
-    def sort_books_by_year(self, reverse=False):
+    def sort_books_by_year(reverse=False):
         try:
             if reverse:
                 cursor.execute('SELECT * FROM books ORDER BY year_published DESC')
