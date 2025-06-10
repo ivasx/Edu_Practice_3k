@@ -23,22 +23,22 @@ def replace_a_o(n):
         'A': 'O',
     }
 
-    if not any(ch in replace_map for ch in line):
+    if not any(char in replace_map for char in line):
         print('У рядку немає букв "а".')
         return line
 
     a_found = False
     result = []
 
-    for i in line:
-        if i in replace_map:
+    for char in line:
+        if char in replace_map:
             if not a_found:
-                result.append(i)
+                result.append(char)
                 a_found = True
             else:
-                result.append(replace_map[i])
+                result.append(replace_map[char])
         else:
-            result.append(i)
+            result.append(char)
 
     return ''.join(result)
 
