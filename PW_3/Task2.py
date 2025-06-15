@@ -1,6 +1,5 @@
 import math
 import numpy
-from tabulate import tabulate
 
 a = -5
 b = 2
