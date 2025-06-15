@@ -1,4 +1,4 @@
-def min_number(number_of_numbers):
+def get_numbers(number_of_numbers):
     numbers = []
     for i in range(number_of_numbers):
         while True:
@@ -13,6 +13,6 @@ def min_number(number_of_numbers):
 
 
 if __name__ == '__main__':
-    minimum = min_number(3)
-    print(f'Мінімальне число зі списку {minimum}: {min(minimum)}')
+    nums = get_numbers(3)
+    print(f'Мінімальне число зі списку {nums}: {min(nums)}')
 
