@@ -5,7 +5,7 @@ rows, cols = 10, 15
 for i in range(rows):
     row = []
     for j in range(cols):
-        row.append(random.randint(0, 100))  # a_ij > 0
+        row.append(random.randint(1, 100))  # a_ij > 0
     A.append(row)
 
 print('Матриця A:')
