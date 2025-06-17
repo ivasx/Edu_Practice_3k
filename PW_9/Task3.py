@@ -1,7 +1,7 @@
 def rectangle(W, H = None, C = '#'):
     H = W if H is None else H
-    for i in range(W):
-        for j in range(H):
+    for i in range(H):
+        for j in range(W):
             print(C,end='')
         print()
 
