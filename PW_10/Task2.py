@@ -86,11 +86,9 @@ cursor.execute('''
 ''')
 conn.commit()
 
-#Потрібно дописати тест
 if __name__ == '__main__':
-    print("=== ДОДАВАННЯ ЕЛЕКТРОННИХ КНИГ ===")
+    print("Додавання електронних книг")
 
-    # Створення та додавання електронних книг
     EBook.add_ebook(EBook('EB1.11111111', 'Стівен Кінг', 'Воно', 1138, 1986, 'PDF', 25.6))
     EBook.add_ebook(
         EBook('EB1.22222222', 'Дж.К. Роулінг', 'Гаррі Поттер і філософський камінь', 223, 1997, 'EPUB', 12.3))
@@ -99,41 +97,33 @@ if __name__ == '__main__':
     EBook.add_ebook(EBook('EB1.55555555', 'Стівен Кінг', 'Сяйво', 447, 1977, 'EPUB', 22.1))
     EBook.add_ebook(EBook('EB1.66666666', 'Джордж Р.Р. Мартін', 'Гра престолів', 694, 1996, 'PDF', 89.4))
 
-    print('\n=== ПОШУК ЕЛЕКТРОННИХ КНИГ ЗА АВТОРОМ ===')
-    print('ПОШУК: електронні книги Стівена Кінга')
+    print('\nПошук електронних книг за автором: ')
+    print('Пошук: електронні книги Стівена Кінга')
     for ebook in EBook.search_ebook_by_author('Стівен Кінг'):
         print(ebook)
 
-    print('\n=== ПОШУК ЕЛЕКТРОННИХ КНИГ ЗА ФОРМАТОМ ===')
+    print('\nПошук електронних книг за форматом:')
     print('ПОШУК: електронні книги у форматі PDF')
     for ebook in EBook.search_ebook_by_format('PDF'):
         print(ebook)
 
-    print('\n=== СОРТУВАННЯ ЕЛЕКТРОННИХ КНИГ ЗА РОЗМІРОМ ===')
-    print('СОРТУВАННЯ: електронні книги за розміром файлу (від найбільших до найменших)')
+    print('\n=Сортування електронних книг')
+    print('Сортування: електронні книги за розміром файлу (від найбільших до найменших)')
     for ebook in EBook.sort_ebooks_by_size(reverse=True):
         print(ebook)
 
-    print('\n=== ДОДАТКОВІ ФУНКЦІЇ ЕЛЕКТРОННИХ КНИГ ===')
+    print('\nДодаткові функції електронних книг')
     test_ebook = EBook('EB1.77777777', 'Тестовий автор', 'Тестова книга', 400, 2023, 'EPUB', 75.5)
 
     print(f'Назва книги: {test_ebook.title}')
     print(f'Кількість сторінок: {test_ebook.page_count}')
     print(f'Розмір файлу: {test_ebook.file_size_mb} MB')
-    print(test_ebook.get_reading_time())  # З швидкістю 50 сторінок/годину
-    print(test_ebook.get_reading_time(30))  # З швидкістю 30 сторінок/годину
+    print(test_ebook.get_reading_time())
+    print(test_ebook.get_reading_time(30))
     print(f'Чи є файл великим (>100 MB)? {test_ebook.is_large_file()}')
 
     large_ebook = EBook('EB1.88888888', 'Великий автор', 'Велика книга', 1500, 2020, 'PDF', 150.0)
     print(f'Чи є файл "{large_ebook.title}" великим (>100 MB)? {large_ebook.is_large_file()}')
 
-    print('\n=== ДЕМОНСТРАЦІЯ НАСЛІДУВАННЯ ===')
-    print('Електронна книга як об\'єкт класу Book:')
-    print(f'Автор: {test_ebook.author}')
-    print(f'Назва: {test_ebook.title}')
-    print(f'Рік видання: {test_ebook.year_published}')
-    print('Електронна книга з додатковими полями:')
-    print(f'Формат файлу: {test_ebook.file_format}')
-    print(f'Розмір файлу: {test_ebook.file_size_mb} MB')
 
     conn.close()
