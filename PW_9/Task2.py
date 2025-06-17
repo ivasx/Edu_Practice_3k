@@ -6,7 +6,7 @@ def input_arg():
         y = float(input("Введіть значення y: "))
         return x, y
     except ValueError:
-        print('Введено некоректне значення одгого з елементів, спробуйте знову.')
+        print('Введено некоректне значення одного з елементів, спробуйте знову.')
         input_arg()
         return None
 
