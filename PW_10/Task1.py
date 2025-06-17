@@ -41,6 +41,7 @@ class Book:
         except Exception as error:
             print(f'Книгу за таким автором не знайдено. Помилка: {error}')
             return []
+
     @staticmethod
     def sort_books_by_year(reverse=False):
         try:
@@ -73,7 +74,7 @@ conn.commit()
 
 
 if __name__ == '__main__':
-    print("=== ДОДАВАННЯ ЗВИЧАЙНИХ КНИГ ===")
+    print("Додавання книг")
     Book.add_book(Book('NL1.11111111', 'Лі Бардуґо', 'Шістка воронів', 480, 2015))
     Book.add_book(Book('NL1.12112112', 'Агата Крісті', 'Вбивство у "Східному експресі"', 256, 1934))
     Book.add_book(Book('NL1.11312111', 'Дженіфер Арментраут', 'Із крові й попелу', 636, 2020))
@@ -83,11 +84,11 @@ if __name__ == '__main__':
     Book.add_book(Book('NL1.12112119', 'Агата Крісті', 'Німий свідок', 304, 1937))
     Book.add_book(Book('NL1.11141351', 'Лілет Ноні', 'Тюремна цілителька', 416, 2022))
 
-    print('\nПОШУК: книги Агати Крісті')
+    print('\nПошук: книги Агати Крісті')
     for book in Book.search_book_by_author('Агата Крісті'):
         print(book)
 
-    print('\nСОРТУВАННЯ: книги за роком видання (від нових до старих)')
+    print('\nСортування: книги за роком видання (від нових до старих)')
     for book in Book.sort_books_by_year(True):
         print(book)
 
